@@ -20,6 +20,24 @@
 
 博客地址：[http://python-history.blogspot.com/](http://python-history.blogspot.com/)
 
+### Miguel Grinberg
+
+简介：Python Flask专家，Flask Web Development一书作者
+
+博客地址：[http://blog.miguelgrinberg.com/](http://blog.miguelgrinberg.com/)
+
+### Mike Driscoll
+
+简介：Python专家，多部Python著作的reviewer
+
+博客地址：[http://www.blog.pythonlibrary.org/](http://www.blog.pythonlibrary.org/)
+
+### Al Sweigart
+
+简介：写过多部Python著作，超过400多篇Python博客
+
+博客地址：[http://inventwithpython.com/blog/](http://inventwithpython.com/blog/)
+
 ## Python 技术公司博客
 
 ### Microsoft
@@ -27,3 +45,9 @@
 简介：微软，正在开发 Python JIT 实现 Pyjion
 
 博客地址：[https://blogs.msdn.microsoft.com/pythonengineering/](https://blogs.msdn.microsoft.com/pythonengineering/)
+
+### Real Python
+
+简介：Python课程，培训
+
+博客地址：[https://realpython.com/blog/](https://realpython.com/blog/)
