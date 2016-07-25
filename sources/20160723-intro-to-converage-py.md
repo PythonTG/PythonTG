@@ -187,6 +187,10 @@ Coverage.py 也允许在上述提到的配置文件中指定你需要解析的�
 
 [点此查看原文链接](http://www.blog.pythonlibrary.org/2016/07/20/an-intro-to-coverage-py/)。
 
-[Python 翻译组](https://github.com/PythonTG)是EarlGrey@编程派发起成立的一个专注于 Python 技术内容翻译的小组，目前已有近 30 名 Python 技术爱好者加入。翻译组出品的内容（包括教程、文档、书籍、视频）将在编程派微信公众号首发，欢迎各位 Python 爱好者推荐相关线索。推荐线索，可直接在编程派微信公众号推文下留言即可。
+[Python 翻译组](https://github.com/PythonTG)是EarlGrey@编程派发起成立的一个专注于 Python 技术内容翻译的小组，目前已有近 30 名 Python 技术爱好者加入。
+
+翻译组出品的内容（包括教程、文档、书籍、视频）将在编程派微信公众号首发，欢迎各位 Python 爱好者推荐相关线索。
+
+推荐线索，可直接在编程派微信公众号推文下留言即可。
 
 
