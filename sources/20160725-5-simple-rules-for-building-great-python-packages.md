@@ -1,18 +1,20 @@
 # 践行这五条原则，构建优秀的Python包
 
-title: 践行这5条原则，即可构建优秀的Python包
+title: 践行这5条原则，构建优秀的Python包
 author: mssaxm
 translator: liubj2016
 reviewer: EarlGrey
 date: 20160725
 permalink: 5-simple-rules-for-building-great-python-packages
-keywords: 构建Python包, init.py, 设计模式, 循环依赖, 五条原则, 导入顺序, 
+keywords: 构建Python包, init.py, 设计模式, 循环依赖, 五条原则, 导入顺序,
 
 ***
 
+> 本文作者为 mssaxm，译者为 liubj2016，校对 EarlGrey，是 Python 翻译组 推出的最新译文。本文为编程派微信公众号首发。
+
+
 构建一个[包](http://docs.python.org/2/tutorial/modules.html#packages)貌似很简单，只要把一堆[模块](http://docs.python.org/2/tutorial/modules.html)都放进一个有 `__init__.py` 文件的目录里面就行了，对吧？可能看上去简单粗暴，但是随着对包的修改越来越多，设计不好的包就会产生循环依赖问题，而且会变得臃肿、脆弱。
 
-![image](https://axialcorps.files.wordpress.com/2013/08/ryanlerch_roundabout_sign.png?w=200&h=178)
 
 遵循这五个简单的原则，有助于避免这些常见的坑，让你的包能够使用的更久，变得更强大。
 
@@ -32,7 +34,7 @@ from exceptions import FSQError, FSQEnvError, FSQEncodeError,\
                        FSQWorkItemError, FSQTTLExpiredError,\
                        FSQMaxTriesError, FSQScanError, FSQDownError,\
                        FSQDoneError, FSQFailError, FSQTriggerPullError,\
-                       FSQHostsError, FSQReenqueueError, FSQPushError 
+                       FSQHostsError, FSQReenqueueError, FSQPushError
 
 # constants 依赖于：exceptions，internal
 import constants
@@ -51,9 +53,9 @@ from lists import hosts, queues
 
 ## 2. 用 `__init__.py` 限制导入的顺序
 
-在上面的[例子](https://github.com/axialmarket/fsq/blob/master/fsq/__init__.py)中，`__init.py` 解决了两个问题：  
+在上面的[例子](https://github.com/axialmarket/fsq/blob/master/fsq/__init__.py)中，`__init.py` 解决了两个问题：
 
-1. 在包的作用域中暴露方法和类，用户不必深入到包的内部结构，即可轻松使用包。  
+1. 在包的作用域中暴露方法和类，用户不必深入到包的内部结构，即可轻松使用包。
 2. 协调导入顺序的唯一位置。
 
 运用得好的话，`__init.py` 可以让你灵活地再组织包的内部结构，而不需要担心内部子模块导入或每个模块的导入顺序带来的副作用。由于你按照某种特定的顺序导入子模块，你的`__init__.py`可以很容易被其他程序员理解，并且可以说明该包所提供的功能。
@@ -77,7 +79,7 @@ __all__ = [ 'FSQError', 'FSQEnvError', 'FSQEncodeError', 'FSQTimeFmtError',
 
 你可能已经注意到了，在`__init__.py`的开头，通过一个单一的子模块 `exceptions.py` 导入了所有的异常。这与在大多数包中看到的不同，大多数的包会在抛出异常的代码附近来定义异常。虽然这可以使得模块更加紧密，但是当包足够复杂的时候，则会出现问题，有下面两种情况：
 
-1. 通常，模块/程序需要导入一个子模块来获取一个函数，这个函数可以导入并且使用抛出异常的代码。为了捕获更高粒度的异常，你需要同时导入你需要的模块以及定义了异常的模块（或者更糟，需要链式导入异常）。这种衍生出来的导入要求，只是将你的包中的导入关系变复杂的第一步。你使用这种模式的次数越多，包的相互依赖性就越强，更容易出错。  
+1. 通常，模块/程序需要导入一个子模块来获取一个函数，这个函数可以导入并且使用抛出异常的代码。为了捕获更高粒度的异常，你需要同时导入你需要的模块以及定义了异常的模块（或者更糟，需要链式导入异常）。这种衍生出来的导入要求，只是将你的包中的导入关系变复杂的第一步。你使用这种模式的次数越多，包的相互依赖性就越强，更容易出错。
 2. 随着异常越来越多，找到所有包能够抛出的错误会越来越难。在一个模块中定义所有的异常，可以让程序员轻易地检查确定你的包抛出所有潜在错误情况。
 
 你应该在包中定义一个基类异常：
@@ -160,13 +162,13 @@ from a_package import APackageError
 
 这一语句会导致如下两种不好的结果：
 
-1. 只有当这个包安装在 `python` 环境变量路径 PYTHONPATH 中的时候，这个子模块才会正常运行。  
+1. 只有当这个包安装在 `python` 环境变量路径 PYTHONPATH 中的时候，这个子模块才会正常运行。
 2. 只有当包的名字是 `a_package` 的时候，这个子模块才会正常运行。
 
 第一条好像不是什么大问题，但是如果你的环境变量路径中不同的目录下安装了两个同名的包，你的子模块可能会导入另一个包，你无意间的失误将会让程序员（或者就是你自己）调试很久。与其使用你自己的包的名字，不如在包中采用相对导入：
 
 ```python
-# within a sub-module 
+# within a sub-module
 from . import FSQEnqueueError, FSQCoerceError, FSQError, FSQReenqueueError,\
               constants as _c, path as fsq_path, construct,\
               hosts as fsq_hosts, FSQWorkItem
@@ -222,7 +224,7 @@ def venqueue(trg_queue, item_f, args, user=None, group=None, mode=None):
     # ...
 ```
 
-上面的例子 [`fsq/enqueue.py`](https://github.com/axialmarket/fsq/blob/master/fsq/enqueue.py)，暴露了一组函数，它们提供了同一功能的不同接口（类似于 `simplejson` 中的 `load/loads`）。虽然这个例子很简单直白，但是要做到保持模块小巧，需要一定的判断力，不过一个很少的做法是：  
+上面的例子 [`fsq/enqueue.py`](https://github.com/axialmarket/fsq/blob/master/fsq/enqueue.py)，暴露了一组函数，它们提供了同一功能的不同接口（类似于 `simplejson` 中的 `load/loads`）。虽然这个例子很简单直白，但是要做到保持模块小巧，需要一定的判断力，不过一个很少的做法是：
 
 如不确定，则新建模块。
 
@@ -235,3 +237,5 @@ def venqueue(trg_queue, item_f, args, user=None, group=None, mode=None):
 翻译组出品的内容（包括教程、文档、书籍、视频）将在编程派微信公众号首发，欢迎各位 Python 爱好者推荐相关线索。
 
 推荐线索，可直接在编程派微信公众号推文下留言即可。
+
+> 译者简介：liubj2016，中南财经政法大学，金融工程系学生。Python使用方向：数据分析，机器学习和量化投资。本文独家发布于编程派。未经许可，禁止转载。
