@@ -101,7 +101,7 @@ notebook 有一个非常有趣的特性，就是可以修改之前的单元格�
 
 ![解释文本就漂亮地渲染出来了](http://ww1.sinaimg.cn/mw690/006faQNTgw1f63kd0oq8gj30id0dtwf4.jpg)
 
-最后，你可以重命名该 notebook，点击``Fiel`` -> ``Rename``，然后输入新的名称。这样，新的名称将会出现在窗口的左上角，在 Jupyter 的标志旁边。
+最后，你可以重命名该 notebook，点击``File`` -> ``Rename``，然后输入新的名称。这样，新的名称将会出现在窗口的左上角，在 Jupyter 的标志旁边。
 
 在下一篇中，我们将更深入地了解 notebook 的能力，以及如何继承其他 Python 库。
 
