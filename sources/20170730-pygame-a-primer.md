@@ -64,7 +64,7 @@ screen = pygame.display.set_mode((800,600))
 
 ```python
 # 用于保证主循环运行的变量
-runnning = True
+running = True
 
 # 主循环！
 while running:
@@ -192,7 +192,7 @@ pressed_keys = pygame.event.get_presssed()
 现在我们将写一个方法，接收上面那个字典，并且根据按下的键定义 sprite 的行为，代码如下:
 
 ```python
-def updata(self,pressed_keys):
+def update(self,pressed_keys):
     if pressed_keys[K_UP]:
         self.rect.move_ip(0,-5)
     if pressed_keys[K_DOWN]:
@@ -223,7 +223,7 @@ class  Player(pygame.sprite.Sprite):
         self.surf.fill((255,255,255))
         self.rect = self.surf.get_rect()
 
-def updata(self,pressed_keys):
+def update(self,pressed_keys):
     if pressed_keys[K_UP]:
         self.rect.move_ip(0,-5)
     if pressed_keys[K_DOWN]:
@@ -272,7 +272,7 @@ while running:
 现在你可以使用方向键移动矩阵块了。也许你注意到了，你可以将矩形块移出屏幕，这可能并不是你想要的。所以我们我们需要往 update 方法中添加一些逻辑，检测矩形的坐标是否移出了 800x600 的屏幕边界；如果出了边界，那么就将它放回在边界上：
 
 ```python
-def updata(self,pressed_keys):
+def update(self,pressed_keys):
     if pressed_keys[K_UP]:
         self.rect.move_ip(0,-5)
     if pressed_keys[K_DOWN]:
@@ -405,7 +405,7 @@ class  Player(pygame.sprite.Sprite):
         self.surf.fill((255,255,255))
         self.rect = self.surf.get_rect()
 
-def updata(self,pressed_keys):
+def update(self,pressed_keys):
     if pressed_keys[K_UP]:
         self.rect.move_ip(0,-5)
     if pressed_keys[K_DOWN]:
