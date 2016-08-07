@@ -1,6 +1,6 @@
 # 使用 Python 进行科学计算：NumPy
 
-title: 使用 Python 进行科学计算：NumPy
+title: 使用 Python 进行科学计算：NumPy入门
 author: JAMAL MOIR
 translator: cystone
 reviewer: EarlGrey
@@ -9,6 +9,10 @@ permalink: an-introduction-to-numpy
 keywords: Python科学计算, numpy教程, numpy基础, numpy数组, 多维数组, where函数
 
 ***
+
+> 本文由 Python 翻译组 最新翻译出品，原作者为 Jamal Moir，译者为 cystone，并由编程派作者 EarlGrey 校对。这是使用 Python 进行科学计算的系列文章，上一篇可点此查看：[Matplotlib 快速入门](http://codingpy.com/article/a-quick-intro-to-matplotlib/)。
+> 
+> 译者简介：cystone， 成都信息工程大学，计算机学院学生。擅长领域：图像处理，机器学习。
 
 你可以用 NumPy 做很多有趣的事情。
 
