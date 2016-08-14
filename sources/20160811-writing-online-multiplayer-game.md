@@ -6,7 +6,7 @@ translator: sleepyjoker
 reviewer: EarlGrey
 date: 20160811
 permalink: writing-online-multiplayer-game-with-python-part-one
-keywords: 
+keywords: asyncio教程, asyncio游戏, python游戏, python多人游戏, python websockets, 游戏开发, python教程
 
 ***
 
@@ -18,8 +18,7 @@ keywords:
 
 毫无疑问，大规模多人在线游戏（MMOG）无论在技术还是文化领域，都是当今时代的潮流。很长一段时间以来，为了给 MMO 游戏编写服务器，我们得投入高昂的预算，而且得使用复杂的底层编程技术。直到最近几年，事情出现了转机。基于动态编程语言的现代化框架支持在一般硬件上处理成千上万的用户并行连接。与此同时，HTML5 和 WebSockets 标准使得创造一个实时的图形客户端成为可能，而且不需要任何插件，就能直接运行在浏览器上。
 
-Python 可能并不是创建可扩展不阻塞服务最为流行的工具，尤其是相较于 node.js 而言。但最新版本的 Python 有望改变这一点。[asyncio](https://docs.python.org/3/whatsnew/3.5.html#whatsnew-pep-492) 标准库和一个特殊的 
-[async/await](https://docs.python.org/3/whatsnew/3.5.html#whatsnew-pep-492)语法的引入，使得异步代码和常规的易阻塞代码一样简洁明了，这使得用 Python 来完成一个异步程序成为了一个不错的选择。基于此，我将试着利用这些新特性来展示如何编写多人在线游戏。
+Python 可能并不是创建可扩展不阻塞服务最为流行的工具，尤其是相较于 node.js 而言。但最新版本的 Python 有望改变这一点。[asyncio](https://docs.python.org/3/whatsnew/3.5.html#whatsnew-pep-492) 标准库和一个特殊的 [async/await](https://docs.python.org/3/whatsnew/3.5.html#whatsnew-pep-492)语法的引入，使得异步代码和常规的易阻塞代码一样简洁明了，这使得用 Python 来完成一个异步程序成为了一个不错的选择。基于此，我将试着利用这些新特性来展示如何编写多人在线游戏。
     
 ## 2.实现异步
 
@@ -60,6 +59,8 @@ end sleeping for 2 seconds
 ```
 		
 正如你所见，协程间并没有互相阻塞——第二个任务在第一个任务结束前就开始了，这是因为 `asyncio.sleep` 在给定时间过后返回了运行权给计划员。在下一篇中，我们将利用基于协程的任务来创建游戏的循环。
+
+***
 
 [点此查看原文链接](https://7webpages.com/blog/writing-online-multiplayer-game-with-python-asyncio-getting-asynchronous/)。
 

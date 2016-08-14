@@ -5,7 +5,7 @@ author: Eli Bendersky
 translator: 唐晓霆 Jason
 reviewer: EarlGrey
 date: 20160810
-permalink: drawing-gifs-with-matplotlin
+permalink: drawing-gifs-with-matplotlib
 keywords: matplotlib教程, matplotlib技巧, matplotlib画图, Python 动图, matplotlib动图, 
 
 ***
