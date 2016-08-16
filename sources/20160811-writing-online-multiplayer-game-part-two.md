@@ -37,7 +37,7 @@ app.router.add_route('GET','/',handle)
 
 web.run_app(app)
 ```
-		
+
 `web.run_app` 是一个很方便的快捷方法，可以快速创建服务端的主任务，并使用其 `run_forever()` 方法运行 `asyncio` 的事件轮询。我建议你检查一下这个方法的源代码，去看看服务端究竟是如何建立和终止的。
 
 `app` 是一个类似于字典的对象，可以用于在相互连接的客户端之间分享数据。我们将用它来存储套接字列表，这个列表将被用于向所有已连接的客户端发送消息。调用函数 `asyncio.ensure_future()` 可以安排我们的主循环 `game_loop` 任务，每两秒就向客户端发送一次“tick”信号。这项任务会与网络服务端在同一个 `asyncio` 事件轮询中并发执行。
@@ -78,13 +78,13 @@ if app["game_loop"] is None or app["game_loop"].cancelled():
 
 这里 `ensure_future()` 返回我们存储在全局字典中的任务对象；当所有用户都断开后，我们取消它：
 
-```python	
+```python
 app["game_llop"].cancel()
 ```
 
 `cancel()` 函数告诉调度器不要把运行权再交给这个协程，并把它的状态设置为 `cancelled`，稍后可以用 `cancelled()` 方法来检查这个状态。有一点要提醒：如果任务对象有外部引用，在任务出现异常时并不会引发异常，而是在任务中设置该异常，可通过 `exception()` 方法检验。这样静悄悄地运行失败对于代码调试并不利。所以我们需要引发所有的异常。为此，你只需要显式地调用未完成任务的 `result()` 方法即可，可以使用回调对象实现：
-	 
-```python	
+
+```python
 app["game_loop"].add_done_callback(lambda t: t.result())
 ```
 
@@ -138,12 +138,12 @@ done, pending = await asyncio.wait(
 ```python
 def game_loop(asycino_loop):
 	print("Game loop thread id {}".format(threading.get_ident())))
-	async def notify():		
+	async def notify():
 		print("Notify thread id {}".format(threading.get_ident()))
 		await tick.require()
 		tick.notify_all()
 		tick.release()
-		
+
 	whille 1:
 		task = asyncio.run_coroutine_threadsafe(notify(),asyncio_loop)
 		# 阻塞线程
@@ -182,16 +182,16 @@ def game_loop(asyncio_loop):
 		tick.release()
 
 	queue = Queue()
-	
+
 	#在不同进程中运行函数
 	def worker():
 		while 1:
 			print("doing heavy calculation in process {}".format(os.getpid()))
 			sleep(1)
 			queue.put("calculation result")
-			
+
 	Process(target=worker).start()
-	
+
 	while 1:
 		# 阻塞本线程而不是主线程的事件轮询
 		result = queue.get()
