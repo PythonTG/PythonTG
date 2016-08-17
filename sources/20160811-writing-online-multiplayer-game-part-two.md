@@ -1,6 +1,6 @@
 # 用 Python 和 asyncio 来编写多人在线游戏(第二部分)
 
-title: 码农用Python写了个机器人，租到了满意的房子
+title: 用 python 和 asyncio 来编写多人在线游戏（第三部分）
 author: Kyrylo Subbotin
 translator: sleepyjoker
 reviewer: EarlGrey
