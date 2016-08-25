@@ -1,14 +1,16 @@
-# uvloop: 极速的Python网络互连
+# uvloop: Python极速网络互连
 
-title: uvloop: 极速的Python网络互连
+title: uvloop: Python极速网络互连
 author: Yury Selivanov
 translator: Jason 唐晓霆
 reviewer: EarlGrey
 date: 20160821
-permalink: create-your-own-shell-in-python-part-1
-keywords: 
+permalink: uvloop-blazing-fast-networking-with-python
+keywords: networking, asyncio, uvloop, 异步I/O, 网络传输, nodejs
 
 ***
+
+> 本文作者为 Yury Selivanov，译者是 唐晓霆 Jason ，由 EarlGrey 校对。译者简介：唐晓霆，在香港的成都人，城市大学研究助理，会写python，兴趣是深度学习。
 
 asyncio 是Python 标准库里的一个异步 I/O 框架。在本文中，我们将介绍 [uvloop](https://github.com/MagicStack/uvloop) : 这是 asyncio 默认事件循环的一个代替品，实现的功能完整，且即插即用。uvloop 是用 Cython 写的，建于 [libuv](http://libuv.org/) 之上。
 

@@ -2,13 +2,17 @@
 
 title: 一文学会Python多进程
 author: Michael Driscoll
-translator: 
+translator:
 reviewer: EarlGrey
 date: 20160820
 permalink: python-201-a-multiprocessing-tutorial
-keywords: 
+keywords: 多进程编程, python进程, multiprocessing, pep 371, 全局解释器锁, GIL, threading
 
 ***
+
+> 本文由 Python 翻译组 最新翻译出品，原作者为 Michael Discroll，译者为 cystone，并由编程派作者 EarlGrey 校对。昨天，编程派已经发布了一篇多线程编程的教程，一文学会Python多线程编程。
+
+> 译者简介：cystone，成都信息工程大学，计算机学院学生。擅长领域：图像处理，机器学习。
 
 多进程(multiprocessing)模块是在 Python 2.6 版本加入的。它最初由 Jesse Noller 和 Richard Oudkerk 在 [PEP 371](https://www.python.org/dev/peps/pep-0371/) 中定义。multiprocessing 模块生成进程的方式就和你使用 threading 模块生成线程是一样的。但是在这里，因为你使用的是多进程，所以你可以规避全局解释锁(GIL)，充分利用机器多处理器的优势。
 

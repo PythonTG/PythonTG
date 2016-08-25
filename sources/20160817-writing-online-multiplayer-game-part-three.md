@@ -2,7 +2,7 @@
 
 title: 用 python 和 asyncio 来编写多人在线游戏（第三部分）
 author: Kyrylo Subbotin
-translator: oo7ww 
+translator: oo7ww
 reviewer: EarlGrey
 date: 20160817
 permalink: writing-online-multiplayer-game-with-python-part-three
@@ -10,11 +10,13 @@ keywords: asyncio教程, asyncio游戏, python游戏, python多人游戏, python
 
 ***
 
-![用 python 和 asyncio 来编写多人在线游戏（第三部分）](hhttp://ww2.sinaimg.cn/mw690/006faQNTgw1f6x2fqpgjqg30k009wjve.gif)
-
 > 在这个系列教程中，我们以多人贪吃蛇游戏为例，开发了一个异步 Python 应用。前一篇文章主要讲了如何编写游戏循环，第一篇则介绍如何实现异步。
 
-> 译者：oo7ww，校对：EarlGrey@编程派。
+> 本文作者为 Kyrylo Subbotin，是一家 IT 咨询公司的 Python 工程师。译者：oo7ww，校对：EarlGrey@编程派。
+
+> 译者简介：oo7ww，北京邮电大学大三学生，计算机科学与技术专业，方向 Python Web。
+
+![用 python 和 asyncio 来编写多人在线游戏（第三部分）](hhttp://ww2.sinaimg.cn/mw690/006faQNTgw1f6x2fqpgjqg30k009wjve.gif)
 
 ## 4.制作一个完整的游戏
 
