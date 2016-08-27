@@ -1,14 +1,18 @@
-# 用Python从头开发一个自己的Shell
+# 用Python从头开发一个自己的Shell（一）
 
-title: 用Python从头开发一个自己的Shell
+title: 用Python从头开发一个自己的Shell（一）
 author: Supasate Choochaisri
 translator: Justin
 reviewer: EarlGrey
 date: 20160820
 permalink: create-your-own-shell-in-python-part-1
-keywords: 
+keywords: shell工作原理, python shell, python教程, python项目, 内建命令
 
 ***
+
+> 平常工作中经常用到 shell 吧？好不好奇 shell 的具体执行方式？今天推送的这两篇文章，将利用 Python 实现一些简单的 shell 功能。
+
+> 本文原作者为 Supasate Choochaisri ，由 PythonTG 翻译组的 Justin 翻译，校对为 EarlGrey。译者简介：Justin，python工程师一枚，对go、docker感兴趣，还在成长ing。
 
 我很好奇 shell（比如 bash、cash等）内部的工作原理，所以我用 Python 实现了 **yosh**（Your Own Shell）来满足自己的好奇心。我在本文中阐释的概念同样适用于其他语言。
 
