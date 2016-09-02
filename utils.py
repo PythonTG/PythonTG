@@ -20,7 +20,7 @@ def get_md_data(path):
     images = []
 
     for line in tmp:
-        if line == '\n' or line == '***':
+        if line == '\n' or line == '***\n':
             continue
         elif line.startswith('!['):
             images.append(line)
