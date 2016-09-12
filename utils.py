@@ -42,6 +42,26 @@ def minutes_to_read(text, images):
     return text_minute + image_minute
 
 
+def absolute_paths():
+    for dirpath, _, filenames in os.walk('./sources/'):
+        for f in filenames:
+            if not f.startswith('.'):
+                yield os.path.abspath(os.path.join(dirpath, f))
+
+
+def update_members():
+    out = open('./members/all.md', 'w')
+    translators = set()
+    for file in absolute_paths():
+        f = open(file, 'r')
+        for line in f:
+            if line.startswith('translator'):
+                translators.add(line.split(':')[1])
+    for item in translators:
+        out.write(item)
+    out.close()
+
+
 def main():
     files = os.listdir('./sources')
 
@@ -54,4 +74,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    update_members()

@@ -2,7 +2,7 @@
 
 title: 一文学会Python多进程
 author: Michael Driscoll
-translator:
+translator:cystone
 reviewer: EarlGrey
 date: 20160820
 permalink: python-201-a-multiprocessing-tutorial
