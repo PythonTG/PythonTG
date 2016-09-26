@@ -4,13 +4,13 @@ import os
 import itertools
 
 WORDS_PER_MINUTE = 700
-#  refer to https://help.medium.com/hc/en-us/articles/214991667-Read-time
+
 
 IMAGE_READ_TIME = 12  # seconds
 # count 12 seconds for the first image, 11 for the second, and minus an
 # additional second for each subsequent image. Any images after the tenth
 # image are counted at three seconds.
-
+# refer to https://help.medium.com/hc/en-us/articles/214991667-Read-time
 
 def get_md_data(path):
     with open(path, 'r') as f:
