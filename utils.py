@@ -12,6 +12,7 @@ IMAGE_READ_TIME = 12  # seconds
 # image are counted at three seconds.
 # refer to https://help.medium.com/hc/en-us/articles/214991667-Read-time
 
+
 def get_md_data(path):
     with open(path, 'r') as f:
         tmp = f.readlines()[10:]
@@ -70,8 +71,10 @@ def main():
             path = './sources/' + file
             text, images = get_md_data(path)
             minutes = minutes_to_read(text, images)
+            print(file)
             print(round(minutes, 0))
 
 
 if __name__ == '__main__':
     update_members()
+    main()
